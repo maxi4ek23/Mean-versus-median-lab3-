@@ -3,7 +3,7 @@
 #Lab3
 
 Mean versus median
-Implement the meanVsMedian method, which takes an array of odd-length integers and returns one of the following:
+ Implement the meanVsMedian method, which takes an array of odd-length integers and returns one of the following:
 
 'mean' - if the average value is greater than the median.
 
