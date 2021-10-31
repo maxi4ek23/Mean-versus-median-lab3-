@@ -3,47 +3,48 @@
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    if(n % 2 == 0)
+    int NumberArrayElement;
+    scanf("%d", &NumberArrayElement);
+    if(NumberArrayElement % 2 == 0)
     {
     printf("get out");
     }
     else
     {
     int x;
-    int array[n];
-    for(int i = 0;i <= n - 1; i++)
+    int array[NumberArrayElement];
+    for(size_t i = 0;i <= NumberArrayElement - 1; i++)
     {
     scanf("%d", &x);
     array[i] = x;
     }
-    int q;
-    for(int r = 0; r < n - 1 ;r++)
+    int temp; //exchange variable
+    for(size_t i = 0; i < NumberArrayElement - 1 ;i++)
     {
-        for(int j = 0;j < n - 1 - r;j++)
+        for(size_t j = 0;j < NumberArrayElement - 1 - i;j++)
         {
             if(array[j] > array[j + 1])
             {
-               q = array[j];
+               temp = array[j];
                array[j] = array[j + 1];
-               array[j + 1] = q;
+               array[j + 1] = temp;
             }
         }
     }
-    for(int i = 0;i < n;i++)
+    for(size_t i = 0;i < NumberArrayElement;i++)
     {
         printf("%d\n", array[i]);
     }
-    int t = n/2;
-    float median = array[t];
+    int mid; //the number of the middle element of the array
+    mid = NumberArrayElement/2;
+    float median = array[mid];
     printf("median : %lf\n", median);
     float Mean;
-    for (int j = 0; j <=n-1; j++)
+    for (size_t j = 0; j <=NumberArrayElement-1; j++)
     {
         Mean += array[j];
     }
-    Mean = Mean / n;
+    Mean /= NumberArrayElement;
     printf("Mean :%lf\n", Mean);
 
     if(Mean > median)
